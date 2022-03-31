@@ -1,26 +1,49 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="page">
+    <h1>TODO LIST</h1>
+    <Todo />
+  </div>
 </template>
 
-<script>
-import HelloWorld from './components/HelloWorld.vue'
-
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+<script setup>
+import Todo from "@/components/Todo.vue";
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
+
+:root {
+  /* Colors */
+  --background: #2a2d43;
+  --task: #414361;
+  --button: #7f2ccb;
+  --disable: #8d99ae;
+  --white: #ffffff;
+
+  /* Fonts */
+  --fira: 'Fira Sans', sans-serif;
+  --quick: 'Quicksand', sans-serif;
+}
+
+body {
+  background: var(--background);
+}
+
+h1 {
+  margin-bottom: 5rem;
+  font-family: var(--fira);
+  font-size: 4em;
+  line-height: 1rem;
+  text-decoration: underline;
+  color: var(--white);
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  place-content: center;
+  place-items: center;
+  min-height: 98vh;
 }
 </style>
